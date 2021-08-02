@@ -7,15 +7,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Recent Conversations
+    </ion-list-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div *ngFor="let  registro of  productos |  async">
+      <ion-item (click)="editar('registro.id')">
+        <ion-avatar slot="start">
+          <img src="./avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <p>{{registro.descripcion}}</p>
+          <h2>{{registro.nombre}}</h2>
+          <h3>{{registro.precio}}</h3>
+          
+        </ion-label>     
+
+      </ion-item>
+
+    </div>
+    
+  </ion-list>
+
+  <ion-item>
+    <ion-laber floating>Cell</ion-laber>
+    <ion-input type="tel"></ion-input>
+  </ion-item>
+  <ion-item>
+    
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="crear()">
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> 
 </ion-content>

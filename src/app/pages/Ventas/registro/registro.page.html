@@ -6,4 +6,30 @@
 
 <ion-content>
 
+  
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="usuario.nombre"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="usuario.apellido" ></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="fixed">Email</ion-label>
+    <ion-input [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.contrasena"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-button color="primary" (click)="guardar()">Guardar</ion-button>
+  </ion-item>
+
+  
 </ion-content>
